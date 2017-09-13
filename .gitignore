@@ -1,0 +1,4 @@
+ProjectTesting/out/*
+.gradle
+ProjectTesting/ProjectTesting.iml
+ProjectTesting/target/*
