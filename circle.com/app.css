@@ -1,0 +1,50 @@
+header,body {
+    padding: 20px;
+    background-color: #141414;    
+    text-align: center; color: white  
+}
+.image { 
+    position: relative; 
+    width: 100%;
+ }
+ 
+ h2 { 
+    position: absolute; 
+    top: 200px; 
+    left: 0; 
+    width: 100%; 
+    font-size: 45px
+ }
+ h3 {
+    position: absolute;
+    top: 300px;
+    left: 0;
+    width: 100%;
+    font-size: 20;
+ }
+/* this adds the visuals to the info text box */
+ .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 240px;
+    background-color: rgba(185, 106, 106, 0.81);
+    color: #000000;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    
+    /* Position the tooltip so that the text box is positioned under the curser */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 45%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+
+
+    }
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    }

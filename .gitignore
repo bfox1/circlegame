@@ -1,0 +1,9 @@
+ProjectTesting/out/*
+.gradle
+ProjectTesting/ProjectTesting.iml
+ProjectTesting/target/*
+CircleGameDeluxeJS/.idea/*
+.DS_Store
+images/.DS_Store
+/.DS_Store
+Circle.zip
