@@ -1,0 +1,3 @@
+StartGame: (minX=160, minY=207) (maxX=346, maxY=292);
+Options: (minX=160, minY=300) (maxX=346, maxY=385);
+Exit: (minX=160, minY=393) (maxX=346, maxY=478);

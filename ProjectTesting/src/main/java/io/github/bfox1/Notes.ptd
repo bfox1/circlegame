@@ -1,0 +1,13 @@
+
+
+    **Circle Game**
+
+    1. Add menu (Start Game)
+    2. Possible Remove "Miss"
+        - misses will decrement points and Time
+        - Blue Circles increment time and add 5 points
+    3. "Currency" used to buy cosmetics. (Micro transactions)
+        - Used to change circles, background, and other neat stuff.
+
+
+
