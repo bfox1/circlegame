@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Cirle Game Deluxe</title>
+    <title>Circle Game Deluxe</title>
 
     <style>
 
@@ -12,20 +12,17 @@
             border: 3px solid white;
             padding: 10px;
         }
-        #myContainer {
-            margin: 0 auto;
-            width: 500px;
-            height: 545px;
-            position: fixed;
-            background: black;
-
-        }
-        #myAnimation {
-
+        #Button
+        {
             width: 50px;
             height: 50px;
+            margin: 0 auto;
+        }
+        #gameCanvas
+        {
             position: absolute;
-            background: red;
+            background: black;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -33,16 +30,25 @@
 
 
 
+    <!-- Button Element Temporary button for game.-->
+    <article id = "Button">
+        <button onClick="gameStart()">StartGame</button>
+    </article>
 
-    <p>
-        <button onClick="moveSquare()">MoveSquare</button>
-    </p>
+    <!-- For Organization purposes, drawSpace holds the GameCanvas Element -->
+    <article id = "drawSpace">
+        <canvas id = "gameCanvas" width="700" height="700"></canvas>
 
-    <article id="myContainer"> <article id = "myAnimation"></article></article>
+    </article>
+
+    <!--<article id="myContainer"> <article id = "myAnimation"></article></article>-->
 
 
-    <!--<canvas id = "gameCanvas"width="500" height="500"></canvas>-->
 
+    <!--Script init begin-->
+    <script src="CircleUtilities.js"></script>
     <script src="CircleGame.js"></script>
+    <!--Script init end-->
+
 </body>
 </html>
