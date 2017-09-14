@@ -38,7 +38,7 @@ function textMovement()
  * @param y The Starting location of the Circle on the Y axis
  * @param rad The radius of the Circle.
  * @param color The Color of the Circle.
- * @constructor inits the circlef
+ * @constructor inits the circle.
  */
 function Circle(x, y, rad, color)
 {
