@@ -10,3 +10,9 @@ this is the link to the mediafire
 http://download1337.mediafire.com/82ji48biixhg/9b1k3zmijz7iew3/CircleGameDeluxe0.02.zip  
 
 -this is the direct link from media fire 
+
+Adfly link below
+
+http://kibuilder.com/25Rd
+
+Ensure it works.
