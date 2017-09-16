@@ -25,49 +25,25 @@
 
                          </a>
                    </h4>
-
             </div>
-
-            
-
             <div id="body"> 
-
-                
-
-
                 <div class = "image">
                     <!-- the image converted into gif so it will maintain a low refresh 
                         rate while allowing infanit loop -->
                 <img src="images/circle1.gif" alt="Circle anamation" />
                   <!-- this is the text in the midle fo the gif image which is in a div tag and centered-->       
-                  
-                  
                      <div class="bounce">
                       <a href="http://kibuilder.com/25Rd">
                         <i class="fa fa-angle-double-down"></i>
                         </a>
                     </div>
-
-                    
                     <h2 class = "suportTeam"> 
                         <a href="http://kibuilder.com/25Rd">
-                            Suport the team! <br> Download is still free
+                            Suport the team! <br> This Download is free
                         </a>
                         
                     </h2>
-
-                   
-
-                
-            
                 </div>
-
-                
-
-                
-
-                  
-
 
             </div>
 
@@ -75,11 +51,7 @@
 
                  <!-- this box is the pop up box which gives information to anyone that hovers over more info -->
 
-                
-                 <h3 class="tooltip"></style> <p class="moreinfo" > More Info</p> <span class="tooltiptext">The web version of the Circle Game is still 
-                        under production. We appreciate the patience and the feed back. 
-                               Check back frequently for any new updates.</span> </h3>
-                 
+                <button class = "moreinfo" type="button" onclick="alert('The web version of the Circle Game is still under production. We appreciate the patience and all the great feedback. Check back frequently for any new updates.')">More info</button>
 
                 <!--
                 <form action="/action_page.php">
@@ -102,14 +74,24 @@
                 </form>
             -->
 
-                  
+                    <h3>Send us your Feedback</h3>
+
+                <div class="wrapper">
+                    <form action="mailto:gam3rz2be@gmail.com" method="post" enctype="text/plain">
+                        <label for="fname">Alias</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your (alias) goes here please be creative !!!">
+
+                        <label for="subject">Comment / Feedback</label>
+                        <textarea id="subject" name="subject" placeholder="Write something, anything ... please !" style="height:200px"></textarea>
+
+                        <input type="submit" value="Send">
+                        <input type="reset" value="Reset">
+                    </form>
+                </div>   
                 <p class="copyright">
                         
                          © Copyright 2017 CrustyRock Design
                     </p>
-                    
-
-
             </div>
         </div>
 
