@@ -30,7 +30,7 @@ public class BallActionEvent extends ActionEvent
 
     public void performAction(Graphics2D graphics2D)
     {
-        circle.doAction(graphics2D);
+        circle.doActionWallCollision(graphics2D);
     }
 
     @Override

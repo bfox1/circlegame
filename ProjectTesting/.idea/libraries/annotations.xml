@@ -1,0 +1,62 @@
+<component name="libraryTable">
+  <library name="annotations">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libJSServer/cdi-core-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/cdi-servlet-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/cdi-websocket-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-alpn-server-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-annotations-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-client-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-continuation-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-deploy-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-gcloud-session-manager-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-http-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-infinispan-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-io-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-jaas-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-jaspi-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-jmx-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-jndi-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-memcached-sessions-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-nosql-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-plus-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-proxy-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-quickstart-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-rewrite-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-security-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-server-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-servlet-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-servlets-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-unixsocket-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-util-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-webapp-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/jetty-xml-9.4.6.v20170531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libJSServer/servlet-api-3.1.jar!/" />
+      <root url="file://$PROJECT_DIR$/libJSServer/annotations" />
+      <root url="file://$PROJECT_DIR$/libJSServer/apache-jsp" />
+      <root url="file://$PROJECT_DIR$/libJSServer/apache-jstl" />
+      <root url="file://$PROJECT_DIR$/libJSServer/fcgi" />
+      <root url="file://$PROJECT_DIR$/libJSServer/http2" />
+      <root url="file://$PROJECT_DIR$/libJSServer/jaspi" />
+      <root url="file://$PROJECT_DIR$/libJSServer/jndi" />
+      <root url="file://$PROJECT_DIR$/libJSServer/setuid" />
+      <root url="file://$PROJECT_DIR$/libJSServer/spring" />
+      <root url="file://$PROJECT_DIR$/libJSServer/websocket" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/libJSServer/setuid" />
+    </NATIVE>
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/libJSServer/annotations" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libJSServer/apache-jsp" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libJSServer/apache-jstl" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libJSServer/fcgi" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libJSServer/http2" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libJSServer/jaspi" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libJSServer/jndi" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libJSServer/setuid" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libJSServer/spring" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/libJSServer/websocket" recursive="false" />
+  </library>
+</component>

@@ -43,17 +43,25 @@ public class Circle extends Ellipse2D.Float
         }
 
         @Override
-        public void doAction(Graphics2D graphics2D)
+        public void doActionWallCollision(Graphics2D graphics2D)
         {
             Ballroom.instance.getTimer().addInterval(10);
             this.setDeath(true);
 
         }
 
-        public void adjustColor(Graphics2D g2)
+        public void moveSpecialWallCollision(Graphics2D g2)
         {
             g2.setColor(Color.BLUE);
             this.move();
+            g2.fill(this);
+            g2.setColor(Color.RED);
+        }
+
+        public void moveSpecialCircleCollision(Graphics2D g2, Circle circle)
+        {
+            g2.setColor(Color.BLUE);
+            this.moveCircleCollision();
             g2.fill(this);
             g2.setColor(Color.RED);
         }
@@ -115,78 +123,7 @@ public class Circle extends Ellipse2D.Float
      */
     public void move()
     {
-        if(i == 4)
-        {
-            if (d == 50) {
-                this.z = -1;
-            }
-            if (d == 20) {
-                this.z = 1;
-            }
 
-            this.d += z;
-
-            super.height = d;
-            super.width = d;
-            i = 0;
-        }
-        i++;
-        //Detect collision with other balls
-        Rectangle2D r = new Rectangle2D.Float(super.x, super.y, d, d);
-
-        /*
-        Special Collision Check, checking if previous Hit circle is stuck to current Circle.
-        If so, will perform an instant speed switch.
-         */
-        if(prevSwap != null)
-        {
-            if(this.prevSwap.intersects(r))
-            {
-                if(this.xSpeed > 0) {
-                    this.xSpeed = -xSpeed;
-                    this.x -= 3;
-                }
-                else if(this.xSpeed < 0) {
-                    this.xSpeed = xSpeed*-1;
-                    this.x += 3;
-                }
-                if(this.ySpeed > 0 ) {
-                    this.ySpeed = -ySpeed;
-                    this.y -= 3;
-                }
-                else if(this.ySpeed < 0 ) {
-                    this.ySpeed = ySpeed*-1;
-                    this.y += 3;
-                }
-
-                if(this.prevSwap.xSpeed > 0) this.prevSwap.xSpeed = -prevSwap.xSpeed;
-                else if(this.prevSwap.xSpeed < 0) this.prevSwap.xSpeed = prevSwap.xSpeed*-1;
-                if(this.prevSwap.ySpeed > 0 ) this.prevSwap.ySpeed = -prevSwap.ySpeed;
-                else if(this.prevSwap.ySpeed < 0 ) this.prevSwap.ySpeed = prevSwap.ySpeed*-1;
-
-                this.prevSwap = null;
-            }
-        }
-        else
-        {
-            this.prevSwap = null;
-        }
-        for(Circle b : balls.values())
-        {
-            if(b != this && b.intersects(r))
-            {
-                    int tempX = xSpeed;
-                    int tempY = ySpeed;
-                    xSpeed = b.xSpeed;
-                    ySpeed = b.ySpeed;
-                    b.xSpeed = tempX;
-                    b.ySpeed = tempY;
-
-                    BallRoomUtilities.playSound("blop");
-                    this.prevSwap = b;
-                    break;
-            }
-        }
 
             if (super.x < 0)
             {
@@ -214,20 +151,67 @@ public class Circle extends Ellipse2D.Float
             super.y += ySpeed;
     }
 
+    public void moveCircleCollision()
+    {
+        if(i == 4)
+        {
+            if (d == 50) {
+                this.z = -1;
+            }
+            if (d == 20) {
+                this.z = 1;
+            }
 
-    public void doAction(Graphics2D graphics2D)
+            this.d += z;
+
+            super.height = d;
+            super.width = d;
+            i = 0;
+        }
+        i++;
+        Rectangle2D r = new Rectangle2D.Float(super.x, super.y, d, d);
+        for(Circle circle : balls.values())
+        {
+            if (circle != this && circle.intersects(r))
+            {
+                int tempX = xSpeed;
+                int tempY = ySpeed;
+                xSpeed = circle.xSpeed;
+                ySpeed = circle.ySpeed;
+                circle.xSpeed = tempX;
+                circle.ySpeed = tempY;
+
+                BallRoomUtilities.playSound("blop");
+                super.x += xSpeed;
+                super.y += ySpeed;
+
+                circle.x += tempX;
+                circle.y += tempY;
+                break;
+            }
+        }
+    }
+
+
+    public void doActionWallCollision(Graphics2D graphics2D)
     {
 
     }
+
+    public void doActionCircleCollision(Graphics2D g2)
+    {}
 
     public boolean isDeath() {
         return death;
     }
 
-    public void adjustColor(Graphics2D g2)
+    public void moveSpecialWallCollision(Graphics2D g2)
     {
 
     }
+
+    public void moveSpecialCircleCollision(Graphics2D g2, Circle circle)
+    {}
 
     public void setDeath(boolean death) {
         this.death = death;
