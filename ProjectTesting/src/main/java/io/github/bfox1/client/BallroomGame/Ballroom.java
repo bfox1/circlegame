@@ -1,9 +1,10 @@
 package io.github.bfox1.client.BallroomGame;
 
+
 import io.github.bfox1.client.BallroomGame.events.EventRegistry;
 import io.github.bfox1.client.BallroomGame.frames.GameMenu;
 import io.github.bfox1.client.BallroomGame.frames.PaintSurface;
-import javazoom.jlgui.basicplayer.BasicPlayer;
+import io.github.bfox1.client.BallroomGame.utility.BallRoomUtilities;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.BufferedInputStream;
+import java.io.*;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -42,7 +43,7 @@ public class Ballroom extends JFrame
     private GameMenu mainMenu;
 
     private GameState state;
-
+    private static transient final int env = 1;
 
     private ScheduledThreadPoolExecutor executor;
 
@@ -52,10 +53,13 @@ public class Ballroom extends JFrame
 
     private final CountDownTimer timer = new CountDownTimer();
     public final EventRegistry eventRegistry = new EventRegistry();
-    BasicPlayer player = new BasicPlayer();
 
     public static void main(String[] args)
     {
+        if(env == 1)
+        {
+            unloadDependencies();
+        }
         instance = new Ballroom();
         instance.init();
 
@@ -67,6 +71,7 @@ public class Ballroom extends JFrame
      */
     public void init()
     {
+
         this.setSize(WIDTH, HEIGHT);
 
         //Additional information being set here//
@@ -149,22 +154,7 @@ public class Ballroom extends JFrame
         this.restartButton.setLabel("Restart Game");
         //this.label.setText("Points: " + points );
 
-        Thread thread = new Thread()
-        {
-
-            @Override
-            public void run()
-            {
-                try
-                {
-                    player.open(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("assets/CircleGame/sounds/music/" + "Pegboard_Nerds-Emergency.mp3")));
-                    player.play();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-        thread.start();
+        BallRoomUtilities.playBackgroundMusic();
 
 
 
@@ -188,6 +178,7 @@ public class Ballroom extends JFrame
     {
         if(timer.getInterval() == 0)
         {
+            BallRoomUtilities.stopPlayer();
             restartGameI();
         }
         else
@@ -195,6 +186,7 @@ public class Ballroom extends JFrame
             points = 0;
             misses = 0;
             timer.restart();
+            this.state = GameState.ACTIVE;
         }
     }
 
@@ -249,7 +241,7 @@ public class Ballroom extends JFrame
             }
             else if(state == GameState.RESTART)
             {
-
+                restartGame();
             }
             else if(state == GameState.INACTIVETRANS)
             {
@@ -278,6 +270,52 @@ public class Ballroom extends JFrame
             }
 
         }
+    }
+
+    private static final void unloadJar(String targetLocation)
+    {
+        File target = new File("lib/"+targetLocation + ".jar");
+        if(target.exists())
+            return;
+
+        try {
+            FileOutputStream out = new FileOutputStream(target);
+            ClassLoader loader = Ballroom.class.getClassLoader();
+            InputStream in = loader.getResourceAsStream("lib/"+targetLocation+".jar");
+
+            byte[] buf = new byte[8*1024];
+            int len;
+            while((len = in.read(buf)) != -1)
+            {
+                out.write(buf, 0, len);
+            }
+            out.close();
+            in.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void unloadDependencies()
+    {
+        //InputStream iStream = BallroomOG.class.getClassLoader().getResourceAsStream("lib");
+
+
+        //unloadJar("lib/basicplayer.jar", "lib/basicplayer.jar");
+        File path = new File("lib");
+        path.mkdirs();
+        path.mkdir();
+        unloadJar("basicplayer3.0");
+        unloadJar("commons-logging-api");
+        unloadJar("jl1.0");
+        unloadJar("jogg-0.0.7");
+        unloadJar("jorbis-0.0.15");
+        unloadJar("jspeex0.9.7");
+        unloadJar("mp3spi1.9.4");
+        unloadJar("tritonus_share");
+        unloadJar("vorbisspi1.0.2");
     }
 
     enum GameState

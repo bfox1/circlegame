@@ -57,6 +57,15 @@ function ifIntersects(circle, circleB)
 
 }
 
+function checkIntersects(circle, x1, y1)
+{
+    var x = circle.x - x1;
+    var y = circle.y - y1;
+    var rSum = circle.radius + 15;
+
+    return (x*x+y*y <= rSum*rSum)
+}
+
 /**
  * Checks Collisions against Circles
  * @param circle
@@ -82,4 +91,55 @@ function checkCircleCollision(circle)
             return;
         }
     }
+}
+
+function registerClickListeners()
+{
+
+    canvas.addEventListener('click', function(evt)
+    {
+        if(gameState === 0)
+        {
+            var x = evt.pageX - canvas.offsetLeft;
+            var y = evt.pageY - canvas.offsetTop;
+
+            var flag;
+
+            console.log(x + " : " + y);
+            var sMinX = 225;
+            var sMaxX = 485;
+            var sMinY = 290;
+            var sMaxY = 409;
+
+            if (sMinX <= x && sMaxX >= x)
+            {
+                if (sMinY <= y && sMaxY >= y)
+                {
+                    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    console.log("Im clicked");
+                    flag = true;
+                    gameStart();
+                    var song = document.getElementById("songList");
+                    //var source = audioCtx.createMediaElementSource(song);
+                    //var gainNode = audioCtx.createGain();
+                    //gainNode.gain.value = 0.2;
+                    //source.connect(gainNode);
+                    //gainNode.connect(audioCtx.destination);
+                    song.autoplay = true;
+                    song.load();
+                }
+            }
+        }
+    })
+
+}
+
+function clearMenuScreen()
+{
+
+}
+
+function setMenu()
+{
+    ctx.drawImage(document.getElementById("Menu"), 1,1,698,698)
 }

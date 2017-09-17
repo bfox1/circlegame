@@ -1,8 +1,11 @@
 package io.github.bfox1.client.BallroomGame.utility;
 
 import io.github.bfox1.client.BallroomGame.Ballroom;
+import javazoom.jlgui.basicplayer.BasicPlayer;
+import javazoom.jlgui.basicplayer.BasicPlayerException;
 
 import javax.sound.sampled.*;
+import java.io.BufferedInputStream;
 import java.io.IOException;
 
 /**
@@ -10,6 +13,35 @@ import java.io.IOException;
  */
 public class BallRoomUtilities
 {
+    private static BasicPlayer player = new BasicPlayer();
+    public static void playBackgroundMusic()
+    {
+        Thread thread = new Thread()
+        {
+
+            @Override
+            public void run()
+            {
+                try
+                {
+                    player.open(new BufferedInputStream(getClass().getClassLoader().getResourceAsStream("assets/CircleGame/sounds/music/" + "Pegboard_Nerds-Emergency.mp3")));
+                    player.play();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        thread.start();
+    }
+
+    public static void stopPlayer()
+    {
+        try {
+            player.stop();
+        } catch (BasicPlayerException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static int randomInt(int min, int max)
     {
@@ -26,14 +58,15 @@ public class BallRoomUtilities
 
     public static void playSound(final String name)
     {
-        new Thread()
+        Thread t = new Thread()
         {
 
             public void run()
             {
                 executeSound(name);
             }
-        }.start();
+        };
+        t.start();
     }
 
 
@@ -44,7 +77,7 @@ public class BallRoomUtilities
         try
         {
 
-            stream = AudioSystem.getAudioInputStream(Ballroom.class.getClassLoader().getResourceAsStream("assets/CircleGame/sounds/effects/" + name + ".wav"));
+            stream = AudioSystem.getAudioInputStream(new BufferedInputStream(Ballroom.class.getClassLoader().getResourceAsStream("assets/CircleGame/sounds/effects/" + name + ".wav")));
 
 
             AudioFormat format = stream.getFormat();

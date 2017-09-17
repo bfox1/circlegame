@@ -106,7 +106,7 @@ public class PaintSurface extends JComponent
 
             if(ball.getCircle() == CircleColor.BLUE)
             {
-                ball.adjustColor(g2);
+                ball.moveSpecialWallCollision(g2);
             }
             else
             {
@@ -114,6 +114,21 @@ public class PaintSurface extends JComponent
 
                 g2.fill(ball);
             }
+        }
+
+        for(Circle ball : balls.values())
+        {
+            if(ball.getCircle() == CircleColor.BLUE)
+            {
+                ball.moveSpecialCircleCollision(g2, ball);
+
+            }
+            else
+            {
+                ball.moveCircleCollision();
+                g2.fill(ball);
+            }
+
         }
 
         //If ball intersects player, will get removed, and a new one spawns.
