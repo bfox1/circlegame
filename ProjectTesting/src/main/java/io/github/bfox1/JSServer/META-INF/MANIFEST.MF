@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: libJSServer/*.jar
+Main-Class: io.github.bfox1.JSServer.JavaServer
+

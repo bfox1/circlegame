@@ -12,37 +12,34 @@
             border: 3px solid white;
             padding: 10px;
         }
-        #Button
-        {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto;
-        }
         #gameCanvas
         {
-            position: absolute;
+            position: fixed;
             background: black;
             margin: 0 auto;
+        }
+        #songList
+        {
+            position: fixed;
+            left: 35%;
+            bottom: 0;
+            width: 20%;
         }
     </style>
 </head>
 <body class="center">
 
 
-
-    <!-- Button Element Temporary button for game.-->
-    <article id = "Button">
-        <button onClick="gameStart()">StartGame</button>
-    </article>
-
     <!-- For Organization purposes, drawSpace holds the GameCanvas Element -->
     <article id = "drawSpace">
-        
         <canvas id = "gameCanvas" width="700" height="700"></canvas>
-
     </article>
 
-    <!--<article id="myContainer"> <article id = "myAnimation"></article></article>-->
+
+
+
+    <img src="menu/Full_Circle_Game_Menu.png" id="Menu">
+
 
 
 
@@ -51,5 +48,8 @@
     <script src="CircleGame.js"></script>
     <!--Script init end-->
 
+    <audio id = "songList" controls controlsList="nodownload">
+        <source src="music/Pegboard Nerds - Emergency .mp3">
+    </audio>
 </body>
 </html>

@@ -2,16 +2,36 @@
 var canvas = document.getElementById('gameCanvas');
 var ctx = canvas.getContext("2d");
 canvas.fillStyle = "black";
+setMenu();
+registerClickListeners();
+
+canvas.addEventListener('click', function(event)
+{
+   var x = event.pageX - canvas.offsetLeft;
+   var y = event.pageY - canvas.offsetTop;
+
+
+
+   for(var i = 0; i < circles.length; i++)
+   {
+
+       if(checkIntersects(circles[i], x, y + 5))
+       {
+           circleIndex.push(i);
+           break;
+       }
+   }
+
+}, false);
 
 var circles = [];
 
-//var circle = new Circle(30,30,29,"red");
-
-//circle.xSpeed = 3;
-//circle.ySpeed = 4;
+var circleIndex = [];
 
 var x = canvas.width;
 var y = canvas.height;
+
+var gameState = 0;
 
 
 /**
@@ -38,7 +58,7 @@ function textMovement()
  * @param y The Starting location of the Circle on the Y axis
  * @param rad The radius of the Circle.
  * @param color The Color of the Circle.
- * @constructor inits the circle.
+ * @constructor inits the circlef
  */
 function Circle(x, y, rad, color)
 {
@@ -83,6 +103,15 @@ function Circle(x, y, rad, color)
 function loop()
 {
     ctx.clearRect(0,0,700,700);
+    if(circleIndex.length > 0) {
+
+        for (var x = 0; x < circleIndex.length; x++)
+        {
+            circles.splice(circleIndex[x], 1);
+        }
+
+        circleIndex.length =0;
+    }
     /**
      * First Loop checks for collisions against walls.
      */
@@ -90,6 +119,15 @@ function loop()
     {
         moveCircle(circles[i]);
         circles[i].draw(ctx);
+    }
+    if(circleIndex.length > 0) {
+
+        for (var x = 0; x < circleIndex.length; x++)
+        {
+            circles.splice(circleIndex[x], 1);
+        }
+
+        circleIndex.length =0;
     }
     /**
      * Second Looop checks for Collisions against other circles.

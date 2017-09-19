@@ -9,8 +9,6 @@
       <element id="directory" name="lib">
         <element id="library" level="project" name="basicplayer3.0" />
       </element>
-      <element id="gwt-compiler-output" facet="ProjectTesting/gwt/GWT" />
-      <element id="artifact" artifact-name="ProjectTesting:GWT" />
     </root>
   </artifact>
 </component>
