@@ -5,12 +5,12 @@ canvas.fillStyle = "black";
 setMenu();
 registerClickListeners();
 
-var points;
-var interval;
+var points = 0;
+var interval = 60;
 
-var totalInterval;
+var myVar;
 
-
+var totalInterval = 60;
 
 var circles = [];
 
@@ -146,8 +146,19 @@ function gameStart()
     {
         generateCircles();
     }
+    startTimer();
     loop();
 }
+
+function startTimer()
+{
+    myVar = setInterval(function()
+    {
+    interval--;
+    totalInterval++;
+    }, 1000);
+}
+
 
 
 /**
@@ -156,10 +167,20 @@ function gameStart()
  */
 function gameUpdate()
 {
+
+    if(interval === 0)
+    {
+        clearInterval(myVar);
+
+    }
     if(circleIndex.length > 0) {
 
         for (var x = 0; x < circleIndex.length; x++)
         {
+            if(circles[circleIndex[x]].xSpeed === "blue")
+            {
+                interval += 10;
+            }
             circles.splice(circleIndex[x], 1);
             circles.push(generateRandomCircle());
 
@@ -185,4 +206,8 @@ function gameUpdate()
         checkCircleCollision(circles[f]);
         //circles[f].draw(ctx);
     }
+
+    updatePoints();
+    updateInterval();
 }
+

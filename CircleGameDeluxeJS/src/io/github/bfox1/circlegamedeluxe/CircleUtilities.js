@@ -21,7 +21,7 @@ function  randomInt(min, max)
  */
 function generateCircles()
 {
-    var blue = randomInt(0, 15);
+    var blue = randomInt(0, 10);
     var circle;
     if(blue === 10)
     {
@@ -42,7 +42,7 @@ function generateCircles()
 
 function generateRandomCircle()
 {
-    var blue = randomInt(0, 15);
+    var blue = randomInt(0, 10);
     var circle;
 
 
@@ -51,6 +51,7 @@ function generateRandomCircle()
             circle = new Circle(randomInt(30, x-29), randomInt(30, y-29), randomInt(15, 30), "blue");
             circle.xSpeed = randomInt(3, 7);
             circle.ySpeed = randomInt(3, 7);
+
         }
         else
         {
@@ -114,7 +115,7 @@ function checkCircleCollision(circle)
             circle.y += circle.ySpeed;
             var bloop = document.getElementById("boop");
             bloop.load();
-            bloop.play();
+            bloop.play().catch(function(){});
             return;
         }
     }
@@ -180,7 +181,8 @@ function registerClickListeners()
                     gameState = 1;
                     var song = document.getElementById("songList");
                     song.play();
-                    song.style.display = "none"
+                    song.style.display = "none";
+                    startTimer();
                 }
             }
             if (oMinX <= x && oMaxX >= x)
@@ -215,6 +217,7 @@ function registerClickListeners()
                  if (checkIntersects(circles[i], x, y + 5))
                  {
                     circleIndex.push(i);
+                    points++;
                     break;
                 }
             }
@@ -226,6 +229,7 @@ function registerClickListeners()
             if(gameState === 1) {
                 if (e.keyCode === 101) {
                     gameState = 2;
+                    clearInterval(myVar);
                 }
             }
             else if(gameState === 2)
@@ -235,7 +239,8 @@ function registerClickListeners()
                     gameState = 1;
                     var song = document.getElementById("songList");
                     song.play();
-                    song.style.display = "none"
+                    song.style.display = "none";
+                    startTimer();
 
                 }
             }
@@ -276,6 +281,7 @@ function updatePoints()
 
     pointText.innerHTML = "Points: " + points;
 }
+
 
 function updateInterval()
 {
