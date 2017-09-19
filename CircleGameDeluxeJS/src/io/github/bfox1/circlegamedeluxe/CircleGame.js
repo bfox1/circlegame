@@ -5,24 +5,12 @@ canvas.fillStyle = "black";
 setMenu();
 registerClickListeners();
 
-canvas.addEventListener('click', function(event)
-{
-   var x = event.pageX - canvas.offsetLeft;
-   var y = event.pageY - canvas.offsetTop;
+var points;
+var interval;
+
+var totalInterval;
 
 
-
-   for(var i = 0; i < circles.length; i++)
-   {
-
-       if(checkIntersects(circles[i], x, y + 5))
-       {
-           circleIndex.push(i);
-           break;
-       }
-   }
-
-}, false);
 
 var circles = [];
 
@@ -32,24 +20,6 @@ var x = canvas.width;
 var y = canvas.height;
 
 var gameState = 0;
-
-
-/**
- * This function is for pure tests.
- * This is primarily to test the creation of a Circle.
- */
-function textMovement()
-{
-
-
-    console.log(canvas.width);
-    ctx.beginPath();
-    ctx.arc(30, 30, 29, 0, 2 * Math.PI, false);
-    ctx.fillStyle = "red";
-    ctx.fill();
-    ctx.stroke();
-    ctx.closePath();
-}
 
 /**
  * This is a function that Creates a Circle Object. Rather
@@ -63,8 +33,6 @@ function textMovement()
 function Circle(x, y, rad, color)
 {
     var _this = this;
-
-
 
     (function()
     {
@@ -91,52 +59,33 @@ function Circle(x, y, rad, color)
         ctx.fillStyle = _this.color;
         ctx.fill();
         ctx.closePath();
+
     }
 }
 
 /**
- * The Primary Loop of the Game.
- * Clears the background before every iteration.
- * Draws each circle accordingly
- * and performs a constant loop.
+ * Main game Loop for the Circle Game.
+ * Processes every Gamestate it comes across.
+ * GameState 0 = Game Menu
+ * GameState 1 = Active State
+ * GameState 2 = PauseMenu
+ * GameState 3 =
  */
 function loop()
 {
-    ctx.clearRect(0,0,700,700);
-    if(circleIndex.length > 0) {
 
-        for (var x = 0; x < circleIndex.length; x++)
-        {
-            circles.splice(circleIndex[x], 1);
-        }
-
-        circleIndex.length =0;
-    }
-    /**
-     * First Loop checks for collisions against walls.
-     */
-    for(var i = 0; i < circles.length; i++)
+    if(gameState === 1)
     {
-        moveCircle(circles[i]);
-        circles[i].draw(ctx);
-    }
-    if(circleIndex.length > 0) {
+        ctx.clearRect(0,0,700,700);
 
-        for (var x = 0; x < circleIndex.length; x++)
-        {
-            circles.splice(circleIndex[x], 1);
-        }
-
-        circleIndex.length =0;
+        gameUpdate();
     }
-    /**
-     * Second Looop checks for Collisions against other circles.
-     */
-    for(var f = 0; f < circles.length; f++)
+    else if(gameState === 2)
     {
+        pauseMenu();
+        var song = document.getElementById("songList");
+        song.pause();
 
-        checkCircleCollision(circles[f]);
-        //circles[f].draw(ctx);
     }
     requestAnimationFrame(loop);
 }
@@ -198,4 +147,42 @@ function gameStart()
         generateCircles();
     }
     loop();
+}
+
+
+/**
+ * This is the SubLoop for the Game.
+ * This Loop focuses on updating the Circles.
+ */
+function gameUpdate()
+{
+    if(circleIndex.length > 0) {
+
+        for (var x = 0; x < circleIndex.length; x++)
+        {
+            circles.splice(circleIndex[x], 1);
+            circles.push(generateRandomCircle());
+
+        }
+
+        circleIndex.length =0;
+    }
+
+    /**
+     * First Loop checks for collisions against walls.
+     */
+    for(var i = 0; i < circles.length; i++)
+    {
+        moveCircle(circles[i]);
+        circles[i].draw(ctx);
+    }
+    /**
+     * Second Looop checks for Collisions against other circles.
+     */
+    for(var f = 0; f < circles.length; f++)
+    {
+
+        checkCircleCollision(circles[f]);
+        //circles[f].draw(ctx);
+    }
 }

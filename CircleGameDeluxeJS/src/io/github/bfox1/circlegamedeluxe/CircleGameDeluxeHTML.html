@@ -5,7 +5,6 @@
     <title>Circle Game Deluxe</title>
 
     <style>
-
         .center {
             margin: 0 auto;
             width: 50%;
@@ -25,6 +24,25 @@
             bottom: 0;
             width: 20%;
         }
+        #Menu
+        {
+            display: none;
+        }
+        #PauseMenu
+        {
+            display: none;
+        }
+        .absolute-text
+        {
+            position: absolute;
+            top: 12px;
+            font-size: 24px;
+            font-style: normal;
+            padding: 10px;
+            width: 39px;
+            color: white;
+            text-align: center;
+        }
     </style>
 </head>
 <body class="center">
@@ -32,13 +50,21 @@
 
     <!-- For Organization purposes, drawSpace holds the GameCanvas Element -->
     <article id = "drawSpace">
+
         <canvas id = "gameCanvas" width="700" height="700"></canvas>
+        <p class="absolute-text" id="pointText">TEST</p>
+        <p class="interval" id="interval"></p>
     </article>
 
 
 
+    <span>
+        <img src="menu/Full_Circle_Game_Menu.png" id="Menu">
 
-    <img src="menu/Full_Circle_Game_Menu.png" id="Menu">
+        <img src="menu/Circle_Pause_Menu.png" id="PauseMenu">
+    </span>
+
+
 
 
 
@@ -48,8 +74,11 @@
     <script src="CircleGame.js"></script>
     <!--Script init end-->
 
-    <audio id = "songList" controls controlsList="nodownload">
-        <source src="music/Pegboard Nerds - Emergency .mp3">
+    <audio id = "songList" controls controlsList="nodownload" style="display: none" controlsList="noplay">
+        <source src="music/bfoxmusic/Fl%20Studio%20-%20Sanitary(prod.%20bfox1).mp3">
+        <source src="music/bfoxmusic/FL%20Studio%20-%20Love%20Them%20More%20--%20prod.%20bfox1%20--%20Hit%20The%20Roof%20album.mp3">
     </audio>
+
+    <audio id = "boop" src="effects/blop.wav"></audio>
 </body>
 </html>
