@@ -287,5 +287,5 @@ function updateInterval()
 {
     var intervalText = document.getElementById("interval");
 
-    intervalText.innerHTML = "Time Left: " + interval;
+    intervalText.innerHTML = "Time: " + interval;
 }
