@@ -21,7 +21,7 @@ function  randomInt(min, max)
  */
 function generateCircles()
 {
-    var blue = randomInt(0, 10);
+    var blue = randomInt(0, 13);
     var circle;
     if(blue === 10)
     {
@@ -39,10 +39,13 @@ function generateCircles()
     }
 }
 
-
+/**
+ * Generates individual Circles and returns a Circle.
+ * @returns {*}
+ */
 function generateRandomCircle()
 {
-    var blue = randomInt(0, 10);
+    var blue = randomInt(0, 13);
     var circle;
 
 
@@ -82,6 +85,13 @@ function ifIntersects(circle, circleB)
 
 }
 
+/**
+ * Checking if Circle intersects with click points.
+ * @param circle
+ * @param x1
+ * @param y1
+ * @returns {boolean}
+ */
 function checkIntersects(circle, x1, y1)
 {
     var x = circle.x - x1;
@@ -121,6 +131,23 @@ function checkCircleCollision(circle)
     }
 }
 
+/**
+ * Writes Text to Canvas.
+ */
+function writeToCanvas()
+{
+    textPointI.name = points;
+    textInterval.name = interval;
+    textPoint.draw(ctx);
+    textTimeLeft.draw(ctx);
+    textInterval.draw(ctx);
+    textPointI.draw(ctx)
+}
+
+/**
+ * Registering Click Listeners and all the good stuff that
+ * goes on in the Game.
+ */
 function registerClickListeners()
 {
 
@@ -129,6 +156,17 @@ function registerClickListeners()
     {
         var x = evt.pageX - canvas.offsetLeft;
         var y = evt.pageY - canvas.offsetTop;
+
+        var rMinX = 225;
+        var rMaxX = 485;
+        var rMinY = 290;
+        var rMaxY = 409;
+
+        var oMinX = 225;
+        var oMinY = 420;
+        var oMaxX = 485;
+        var oMaxY = 538;
+        //GameState equals Main Menu State.
         if(gameState === 0)
         {
 
@@ -136,19 +174,15 @@ function registerClickListeners()
             var flag;
 
             console.log(x + " : " + y);
-            var sMinX = 225;
-            var sMaxX = 485;
-            var sMinY = 290;
-            var sMaxY = 409;
 
-            if (sMinX <= x && sMaxX >= x)
+
+            if (rMinX <= x && rMaxX >= x)
             {
-                if (sMinY <= y && sMaxY >= y)
+                if (rMinY <= y && rMaxY >= y)
                 {
                     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
                     console.log("Im clicked");
                     flag = true;
-                    gameStart();
                     var song = document.getElementById("songList");
                     //var source = audioCtx.createMediaElementSource(song);
                     //var gainNode = audioCtx.createGain();
@@ -159,30 +193,8 @@ function registerClickListeners()
                     song.load();
 
                     gameState = 1;
-                }
-            }
-        }
-        else if(gameState === 2)
-        {
-            var rMinX = 225;
-            var rMaxX = 485;
-            var rMinY = 290;
-            var rMaxY = 409;
+                    gameStart();
 
-            var oMinX = 225;
-            var oMinY = 420;
-            var oMaxX = 485;
-            var oMaxY = 538;
-
-            if (rMinX <= x && rMaxX >= x)
-            {
-                if (rMinY <= y && rMaxY >= y)
-                {
-                    gameState = 1;
-                    var song = document.getElementById("songList");
-                    song.play();
-                    song.style.display = "none";
-                    startTimer();
                 }
             }
             if (oMinX <= x && oMaxX >= x)
@@ -202,6 +214,74 @@ function registerClickListeners()
                 }
             }
         }
+        else if(gameState === 2)
+        {
+
+            if (rMinX <= x && rMaxX >= x)
+            {
+                if (rMinY <= y && rMaxY >= y)
+                {
+                    gameState = 1;
+                    var song = document.getElementById("songList");
+                    song.play();
+                    song.style.display = "none";
+                    startTimer();
+                    return;
+                }
+            }
+            if (oMinX <= x && oMaxX >= x)
+            {
+                if (oMinY <= y && oMaxY >= y)
+                {
+                    if(oFlag)
+                    {
+                        closeOptionSubMenu();
+                        oFlag = false;
+                    }
+                    else
+                    {
+                        openOptionMenu();
+                        oFlag = true;
+                    }
+                }
+            }
+
+        }
+        else if(gameState === 3)
+        {
+            if (rMinX <= x && rMaxX >= x)
+            {
+                if (rMinY <= y && rMaxY >= y)
+                {
+                    gameState = 0;
+
+
+                    ctx.clearRect(0,0, 700,700);
+
+                    restartGame();
+                    setMenu();
+                    endFlag = false;
+                    return;
+                }
+            }
+            if (oMinX <= x && oMaxX >= x)
+            {
+                if (oMinY <= y && oMaxY >= y)
+                {
+                    if(oFlag)
+                    {
+                        closeOptionSubMenu();
+                        oFlag = false;
+                    }
+                    else
+                    {
+                        openOptionMenu();
+                        oFlag = true;
+                    }
+                }
+            }
+        }
+
     });
 
     canvas.onmousedown = function(event)
@@ -260,6 +340,12 @@ function pauseMenu()
     ctx.drawImage(document.getElementById("PauseMenu"),1,1, 698, 698);
 }
 
+function displayGameEndMenu()
+{
+    ctx.drawImage(document.getElementById("EndMenu"),1,1,698, 698);
+    endFlag = true;
+}
+
 function openOptionMenu()
 {
     var song = document.getElementById("songList");
@@ -274,18 +360,16 @@ function closeOptionSubMenu()
     song.style.display = "none";
 }
 
-
-function updatePoints()
+function restartGame()
 {
-    var pointText = document.getElementById("pointText");
+    var song = document.getElementById("songList")
+    song.pause();
+    song.currentTime = 0;
+    song.style.display = "none";
 
-    pointText.innerHTML = "Points: " + points;
+    points = 0;
+    interval = 60;
+    totalInterval = 60;
+    circles.length = 0;
 }
 
-
-function updateInterval()
-{
-    var intervalText = document.getElementById("interval");
-
-    intervalText.innerHTML = "Time Left: " + interval;
-}
