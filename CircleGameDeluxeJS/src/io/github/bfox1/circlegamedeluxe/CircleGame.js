@@ -1,12 +1,25 @@
 
+/* Initializing Canvas and CTX */
 var canvas = document.getElementById('gameCanvas');
 var ctx = canvas.getContext("2d");
 canvas.fillStyle = "black";
+
+/*Setting up Menu*/
+
 setMenu();
+
+/* Registering Click Listeners */
+
 registerClickListeners();
 
+/*Variable inits */
+
 var points = 0;
-var interval = 60;
+var interval = 5;
+var textPoint = new DisplayText("Points: ",80, 40);
+var textPointI = new DisplayText(points, 70, 75);
+var textTimeLeft = new DisplayText("Time Left:", 350, 40);
+var textInterval = new DisplayText(interval, 345, 75);
 
 var myVar;
 
@@ -20,6 +33,8 @@ var x = canvas.width;
 var y = canvas.height;
 
 var gameState = 0;
+
+var endFlag = false;
 
 /**
  * This is a function that Creates a Circle Object. Rather
@@ -64,6 +79,35 @@ function Circle(x, y, rad, color)
 }
 
 /**
+ * Simple creates a TextObject for special text on the Canvas.
+ * @param name
+ * @param x
+ * @param y
+ * @constructor
+ */
+function DisplayText(name, x, y)
+{
+    var _this = this;
+
+    (function()
+    {
+        _this.name = name || null;
+        _this.x = x || null;
+        _this.y = y || null;
+    })();
+
+    this.draw = function(ctx)
+    {
+
+        ctx.font = "30px Comic Sans MS";
+        ctx.fillStyle = "white";
+        ctx.textAlign = "center";
+        ctx.fillText(_this.name, _this.x, _this.y);
+
+    }
+}
+
+/**
  * Main game Loop for the Circle Game.
  * Processes every Gamestate it comes across.
  * GameState 0 = Game Menu
@@ -87,7 +131,16 @@ function loop()
         song.pause();
 
     }
-    requestAnimationFrame(loop);
+    else if(gameState === 3)
+    {
+        ctx.clearRect(0,0,700,700);
+        displayGameEndMenu();
+    }
+
+    if(!endFlag)
+    {
+        requestAnimationFrame(loop);
+    }
 }
 
 /**
@@ -171,13 +224,13 @@ function gameUpdate()
     if(interval === 0)
     {
         clearInterval(myVar);
-
+        gameState = 3;
     }
     if(circleIndex.length > 0) {
 
         for (var x = 0; x < circleIndex.length; x++)
         {
-            if(circles[circleIndex[x]].xSpeed === "blue")
+            if(circles[circleIndex[x]].color === "blue")
             {
                 interval += 10;
             }
@@ -207,7 +260,6 @@ function gameUpdate()
         //circles[f].draw(ctx);
     }
 
-    updatePoints();
-    updateInterval();
+    writeToCanvas();
 }
 
