@@ -12,6 +12,7 @@ body {
 
  #container {
     min-height:100%;
+    margin: auto
     position:relative;
     width: 80%;
  }
@@ -178,8 +179,7 @@ font-size: 20px;
 
     .bounce {
         position: absolute;
-        top:190px;
-        bottom: 30px;
+        top: 150px;
         left: 50% ;
         width: 60px;
         height: 60px ;
