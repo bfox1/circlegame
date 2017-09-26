@@ -15,7 +15,7 @@ registerClickListeners();
 /*Variable inits */
 
 var points = 0;
-var interval = 5;
+var interval = 60;
 var textPoint = new DisplayText("Points: ",80, 40);
 var textPointI = new DisplayText(points, 70, 75);
 var textTimeLeft = new DisplayText("Time Left:", 350, 40);
