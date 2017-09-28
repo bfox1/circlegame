@@ -4,7 +4,7 @@
  * @param max maximum number to generate
  * @returns {Number}
  */
-function  randomInt(min, max)
+function randomInt(min, max)
 {
     var rand = (Math.random() * max) + 1;
 
@@ -14,6 +14,38 @@ function  randomInt(min, max)
     if(total < min) total += min - total;
 
     return parseInt(total);
+}
+
+function calculateScore()
+{
+    return Math.round((points / misses)*totalInterval);
+}
+
+function displayFinalResults()
+{
+    var s = calculateScore();
+    console.log(points);
+    var finalPoints = new DisplayText(points === 0 ? "0" : points, 79,60, "white");
+    var finalMisses = new DisplayText(misses === 0 ? "0" : misses, 345,60,"white");
+    var finalTime = new DisplayText(totalInterval, 585,60,"white");
+    var finalScore = new DisplayText(s === null || s === "null" ? "0" : s, 350,216, "white");
+
+    finalPoints.draw(ctx);
+    finalMisses.draw(ctx);
+    finalTime.draw(ctx);
+    finalScore.draw(ctx);
+
+    var prevScore = localStorage.getItem("score");
+
+    if(prevScore !== null && prevScore !== "null")
+    {
+        if(prevScore < score)
+        {
+            localStorage.setItem("score", score);
+        }
+    }
+     score = localStorage.getItem("score");
+    sendDataToServer()
 }
 
 /**
@@ -96,7 +128,7 @@ function checkIntersects(circle, x1, y1)
 {
     var x = circle.x - x1;
     var y = circle.y - y1;
-    var rSum = circle.radius + 1;
+    var rSum = circle.radius + 5;
 
     return (x*x+y*y <= rSum*rSum)
 }
@@ -124,8 +156,20 @@ function checkCircleCollision(circle)
             circle.x += circle.xSpeed;
             circle.y += circle.ySpeed;
             var bloop = document.getElementById("boop");
-            bloop.load();
-            bloop.play().catch(function(){});
+            var bloop2 = document.getElementById("boop2");
+            console.log(bloop.duration + " : " + bloop.currentTime);
+            if(bloop.duration > 0 )
+            {
+
+                bloop.load();
+                bloop.play();
+            }
+            else if(bloop2.duration > 0 )
+            {
+                bloop.load();
+
+                bloop2.play();
+            }
             return;
         }
     }
@@ -166,6 +210,8 @@ function registerClickListeners()
         var oMinY = 420;
         var oMaxX = 485;
         var oMaxY = 538;
+
+        console.log(x + " : " + y);
         //GameState equals Main Menu State.
         if(gameState === 0)
         {
@@ -173,7 +219,7 @@ function registerClickListeners()
 
             var flag;
 
-            console.log(x + " : " + y);
+
 
 
             if (rMinX <= x && rMaxX >= x)
@@ -291,6 +337,7 @@ function registerClickListeners()
 
             var x = event.clientX - canvas.offsetLeft;
             var y = event.clientY - canvas.offsetTop;
+            misses++;
 
             for (var i = 0; i < circles.length; i++)
             {
@@ -332,7 +379,11 @@ function registerClickListeners()
 
 function setMenu()
 {
-    ctx.drawImage(document.getElementById("Menu"), 1,1,698,698)
+    ctx.drawImage(document.getElementById("Menu"), 1,1,698,698);
+    var scoreText = new DisplayText("HighScore", 350,30, "black");
+    var s = new DisplayText(score, 350, 60, "black");
+    scoreText.draw(ctx);
+    s.draw(ctx);
 }
 
 function pauseMenu()
@@ -369,7 +420,23 @@ function restartGame()
 
     points = 0;
     interval = 60;
-    totalInterval = 60;
+    misses = 0;
+    totalInterval = 0;
     circles.length = 0;
+}
+
+function sendDataToServer()
+{
+    var ws = new WebSocket("ws://192.168.1.84:8080/");
+
+    if(ws.readyState !== WebSocket.CLOSED)
+    {
+        ws.onopen = function()
+        {
+            console.log("Sending Data");
+            ws.send("bfox");
+            ws.send(score);
+        }
+    }
 }
 

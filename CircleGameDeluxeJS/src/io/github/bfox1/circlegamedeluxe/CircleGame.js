@@ -5,7 +5,7 @@ var ctx = canvas.getContext("2d");
 canvas.fillStyle = "black";
 
 /*Setting up Menu*/
-
+var score = localStorage.getItem("score");
 setMenu();
 
 /* Registering Click Listeners */
@@ -15,15 +15,20 @@ registerClickListeners();
 /*Variable inits */
 
 var points = 0;
-var interval = 60;
-var textPoint = new DisplayText("Points: ",80, 40);
-var textPointI = new DisplayText(points, 70, 75);
-var textTimeLeft = new DisplayText("Time Left:", 350, 40);
-var textInterval = new DisplayText(interval, 345, 75);
+var interval = 2;
+var misses = 0;
+var textPoint = new DisplayText("Points: ",80, 40, "white");
+var textPointI = new DisplayText(points, 70, 75, "white");
+var textTimeLeft = new DisplayText("Time Left:", 350, 40, "white");
+var textInterval = new DisplayText(interval, 345, 75, "white");
+
+
+
+
 
 var myVar;
 
-var totalInterval = 60;
+var totalInterval = 0;
 
 var circles = [];
 
@@ -43,7 +48,7 @@ var endFlag = false;
  * @param y The Starting location of the Circle on the Y axis
  * @param rad The radius of the Circle.
  * @param color The Color of the Circle.
- * @constructor inits the circlef
+ * @constructor inits the circle.
  */
 function Circle(x, y, rad, color)
 {
@@ -85,7 +90,7 @@ function Circle(x, y, rad, color)
  * @param y
  * @constructor
  */
-function DisplayText(name, x, y)
+function DisplayText(name, x, y, color)
 {
     var _this = this;
 
@@ -100,7 +105,7 @@ function DisplayText(name, x, y)
     {
 
         ctx.font = "30px Comic Sans MS";
-        ctx.fillStyle = "white";
+        ctx.fillStyle = color;
         ctx.textAlign = "center";
         ctx.fillText(_this.name, _this.x, _this.y);
 
@@ -135,6 +140,7 @@ function loop()
     {
         ctx.clearRect(0,0,700,700);
         displayGameEndMenu();
+        displayFinalResults()
     }
 
     if(!endFlag)
