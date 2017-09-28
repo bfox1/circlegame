@@ -15,7 +15,7 @@ registerClickListeners();
 /*Variable inits */
 
 var points = 0;
-var interval = 2;
+var interval = 60;
 var misses = 0;
 var textPoint = new DisplayText("Points: ",80, 40, "white");
 var textPointI = new DisplayText(points, 70, 75, "white");
