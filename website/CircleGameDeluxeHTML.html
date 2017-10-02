@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+        <head> 
+                
+                <title> 
+                    The Circle Game
+                </title> 
+                <meta name='cpalead-verification' content='Ey6QdpVbgOTJyhw3SXx9rERzUjRZUycyj2xsj80Qi6d' />                
+                <link href = "app.css" rel = "stylesheet"> 
+                <style>
+                    .gamepagebody{
+                        background: #141414;
+                    }
+
+                    .gameholder{
+                        margin: 0 auto;
+                        width: 100%;
+                        height: 100%;
+                        background: #141414;
+                    }
+                    .gameheader{
+                        width: 100%;
+                        height: 100%;
+                        margin: 0 auto;
+                    }
+                    .rightbanner{
+                        /*----    background: orange;    use this to find the placement of the sub/perent div  -----*/
+                        width: 20%;
+                        height: 700px;
+                        float: right;
+                    }
+                    .insiderightbanner{
+                        width: 80%;
+                        height: 100%;
+                        margin: 0 auto;
+                        /*    background: purple;  */
+                        border-radius: 20px;
+                    }
+                    .leftbanner{
+                        /*----    background: orange;   use this to find the placement of the sub/perent div  -----*/
+                        width: 20%;
+                        height: 700px;
+                        float: left;
+                    }
+                    .insideleftbanner{
+                        width: 80%;
+                        height: 100%;
+                        margin: 0 auto;
+                        /* background: purple; */
+                        border-radius: 20px;
+                    }
+                    .gamebody{
+                        width: 60%;
+                        height: 100%;
+                        margin: 0 auto;
+                        
+                    }
+                    .gamefooter{
+                        bottom: 0px;
+                        width: 100%;
+                        height: 100px;
+                        margin: 0 auto;
+                        
+                    }
+
+                    #gameCanvas
+                    {
+                        background: black;
+                        margin: 0 auto;
+                        border-radius: 20px;
+                    }
+                    #songList
+                    {
+                        position: fixed;
+                        left: 35%;
+                        bottom: 0;
+                        width: 20%;
+                    }
+                    #Menu
+                    {
+                        display: none;
+                    }
+                    #PauseMenu
+                    {
+                        display: none;
+                    }
+                    #EndMenu
+                    {
+                        display: none;
+                    }
+                    .heading1{
+                        top: 1px;
+
+                    }
+                
+                </style>
+        </head>
+ 
+    <body class="gamepagebody">
+       
+            <div class="gameholder">
+
+                    <div class="gameheader">
+
+                            <a href="index.html"><button class="home" style="vertical-align:middle"><span>Home </span></button></a>
+                            <a href="download.html"><button class="download" style="vertical-align:middle"><span>Download</span></button></a>
+                            <a href="about.html"><button class="about" style="vertical-align:middle"> <span>About Us </span></button></a> <br>
+                            
+                            
+                            <button class = "howtoplay" style="vertical-align:middle" type="button" onclick="alert('Hello guys, lets get started on playing this game. First find a circle that appeals to you. Next pop that sucker by clicking on it and collect the points. Now do as many as you can in 60 seconds. P.S. the blue circles give you +10 sec. GOOD LUCK')"><span>How to Play</span></button>
+                            
+                    </div>
+                    
+                        <div class="rightbanner">
+                            <div class="insiderightbanner">
+                                <!-- the code for the advertisement banner goes here -->
+                                <script src="https://trklvs.com/track.html?pid=794414&id=35007&bid=8&w=160&h=600"></script>
+                            </div>
+                                            
+                        </div>
+
+                        <div class="leftbanner">
+                            <div class="insideleftbanner">
+                                 <!-- the code for the advertisement banner goes here -->
+                                 <script src="https://trklvs.com/track.html?pid=794414&id=35007&bid=8&w=160&h=600"></script>
+                                 
+                            </div>
+
+                        </div>
+                        
+                    <div class = "gamebody">
+
+                        
+
+                                <!-- For Organization purposes, drawSpace holds the GameCanvas Element -->
+                                <article id = "drawSpace">
+                                        <canvas id = "gameCanvas" width="700" height="700"></canvas>
+                                    </article>
+                                
+                                
+                                
+                                    <span>
+                                        <img src="assets/graphics/menu/Full_Circle_Game_Menu.png" id="Menu">
+                                
+                                        <img src="assets/graphics/menu/Circle_Pause_Menu.png" id="PauseMenu">
+                                
+                                        <img src="assets/graphics/menu/Circle_Game_End_Menu.png" id="EndMenu">
+                                    </span>
+                                
+    
+                    </div>
+
+                    <div class = "gamefooter">
+
+                            <!--Script init begin-->
+                            <script src="CircleUtilities.js"></script>
+                            <script src="CircleGame.js"></script>
+                            <!--Script init end-->
+
+                            <audio id = "songList" controls controlsList="nodownload" style="display: none" controlsList="noplay">
+                                    <source src="assets/sounds/music/bfoxmusic/Solitude.mp3">
+                                    <source src="assets/sounds/music/bfoxmusic/Fl%20Studio%20-%20Sanitary(prod.%20bfox1).mp3">
+
+
+                            </audio>
+
+                                    <audio id = "boop" src="assets/sounds/effects/blop.wav"></audio>
+                                    <audio id = "boop2" src="assets/sounds/effects/blop.wav"></audio>
+                                    <audio id = "boop3" src="assets/sounds/effects/blop.wav"></audio>
+
+
+                            <p class="copyright">
+                                    
+                             © Copyright 2017 CrustyRock Design
+                            </p>
+
+                    </div>
+
+            </div>
+
+    </body>
+        
+</html>
+    
