@@ -21,3 +21,6 @@ games/games old/circle 1.0 rar/*
 games/games old/circle 2.0/*
 
 *.ini
+
+*.xml
+CircleGameDeluxeJS/.idea/kotlinc.xml
