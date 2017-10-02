@@ -45,7 +45,7 @@ function displayFinalResults()
         }
     }
      score = localStorage.getItem("score");
-    sendDataToServer()
+
 }
 
 /**
@@ -381,7 +381,7 @@ function setMenu()
 {
     ctx.drawImage(document.getElementById("Menu"), 1,1,698,698);
     var scoreText = new DisplayText("HighScore", 350,30, "black");
-    var s = new DisplayText(score, 350, 60, "black");
+    var s = new DisplayText(score === null || score === "null" ? "0" : score, 350, 60, "black");
     scoreText.draw(ctx);
     s.draw(ctx);
 }
