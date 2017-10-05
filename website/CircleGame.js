@@ -8,6 +8,7 @@ canvas.fillStyle = "black";
 var score = localStorage.getItem("score");
 setMenu();
 
+
 /* Registering Click Listeners */
 
 registerClickListeners();
@@ -79,6 +80,48 @@ function Circle(x, y, rad, color)
         ctx.fillStyle = _this.color;
         ctx.fill();
         ctx.closePath();
+
+    }
+}
+
+function Circle3d(x,y,rad, color)
+{
+    var _this = this;
+
+    (function()
+    {
+        _this.x = x;
+        _this.y = y;
+        _this.radius = rad;
+        _this.color = color;
+        _this.img = getCircleImage(color);
+    })();
+
+    function getCircleImage(color)
+    {
+        if(color === "blue")
+        {
+            return document.getElementById("Blue_Circle");
+        }
+        else
+        {
+            return document.getElementById("Red_Circle");
+        }
+    }
+
+    this.move = function()
+    {
+        this.img.style.offset
+    }();
+
+    this.draw = function (ctx)
+    {
+        if(!_this.x || !_this.y || !_this.radius || !_this.color)
+        {
+            console.error("Circle Requires an x, y, radius and color.");
+            return;
+        }
+        ctx.drawImage(this.img, x, y, rad, rad)
 
     }
 }
@@ -236,6 +279,7 @@ function gameUpdate()
 
         for (var x = 0; x < circleIndex.length; x++)
         {
+
             if(circles[circleIndex[x]].color === "blue")
             {
                 interval += 10;
@@ -253,6 +297,7 @@ function gameUpdate()
      */
     for(var i = 0; i < circles.length; i++)
     {
+
         moveCircle(circles[i]);
         circles[i].draw(ctx);
     }
