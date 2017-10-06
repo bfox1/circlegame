@@ -130,7 +130,7 @@ font-size: 20px;
 
 .howtoplay{
   transition: all 0.5s;
-  width: 200px;
+  width: 165px;
   font-size: 20px;
   background-color: rgba(255, 255, 255, 0); 
   color: white; 
@@ -141,7 +141,7 @@ font-size: 20px;
 .howtoplay:hover{
   background: #00F7FF;
   color: black;
-  margin: 20px;
+  margin: 30px;
 }
 
 /*  ---- this is the start of the anamation of the text moreinfo ----*/
@@ -324,7 +324,7 @@ font-size: 20px;
     }
     .home{
         transition: all 0.5s;
-        width: 120px;
+        width: 160px;
         font-size: 20px;
         background-color: rgba(255, 255, 255, 0); 
         color: white; 
@@ -365,7 +365,7 @@ font-size: 20px;
     /*-- this is th end of the anamation for the home button  --*/
 
     .download{
-        width: 150px;
+        width: 165px;
         margin: 10px;
         font-size: 20px;
         background-color: rgba(255, 255, 255, 0); 
@@ -405,7 +405,7 @@ font-size: 20px;
 
     /*-- this is the end of the anamation for the downlaod button  --*/
     .about{
-        width: 150px;
+        width: 165px;
         font-size: 20px;
         background-color: rgba(255, 255, 255, 0); 
         color: white; 

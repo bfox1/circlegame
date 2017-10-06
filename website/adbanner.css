@@ -1,28 +1,32 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
 .rightbanner{
-    background: orange;
+    padding-top: 40px;
+    /*background: orange;*/
     width: 20%;
     height: 700px;
     float: right;
 }
 .insiderightbanner{
     width: 80%;
-    height: 100%;
+    height: 90%;
     margin: 0 auto;
+    /*border-style: dotted;
     background: purple;
-    border-radius: 20px;
+    border-radius: 20px;*/
 }
 .leftbanner{
-    background: orange;
+    padding-top: 40px;
+    /*background: orange;*/
     width: 20%;
     height: 700px;
     float: left;
 }
 .insideleftbanner{
     width: 80%;
-    height: 100%;
+    height: 90%;
     margin: 0 auto;
+    /*border-style: dotted;
     background: purple;
-    border-radius: 20px;
+    border-radius: 20px;*/
 }
