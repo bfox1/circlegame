@@ -174,12 +174,6 @@ font-size: 20px;
 
 /*-- this is th end of the anamation for the moreinfo button  --*/
 
-
-
-
-
-
-
      
 /* this adds the visuals to the info text box */
  .tooltiptext {
@@ -231,13 +225,14 @@ font-size: 20px;
 
     .fa-angle-double-down:before {content: "\f103";}
     .bounce:hover {
+
         border: 2px solid rgb(185, 39, 185);
        
     }
 
     .bounce {
         position: absolute;
-        top: 120px;
+        top: 250px;
         left: 50% ;
         width: 60px;
         height: 60px ;

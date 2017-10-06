@@ -1,7 +1,7 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
 .rightbanner{
-    /*----    background: orange;    use this to find the placement of the sub/perent div  -----*/
+    background: orange;
     width: 20%;
     height: 700px;
     float: right;
@@ -10,11 +10,11 @@
     width: 80%;
     height: 100%;
     margin: 0 auto;
-    /*    background: purple;  */
+    background: purple;
     border-radius: 20px;
 }
 .leftbanner{
-    /*----    background: orange;   use this to find the placement of the sub/perent div  -----*/
+    background: orange;
     width: 20%;
     height: 700px;
     float: left;
@@ -23,6 +23,6 @@
     width: 80%;
     height: 100%;
     margin: 0 auto;
-    /* background: purple; */
+    background: purple;
     border-radius: 20px;
 }
