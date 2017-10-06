@@ -1,5 +1,17 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
+
+.insideleftbanner,.insiderightbanner{
+    border-style: dotted;
+    background: purple;
+    border-radius: 20px;
+}
+.leftbanner,.rightbanner{
+    background: orange;
+}
+
+
+
 .rightbanner{
     padding-top: 40px;
     /*background: orange;*/
@@ -30,3 +42,4 @@
     background: purple;
     border-radius: 20px;*/
 }
+

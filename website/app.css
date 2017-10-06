@@ -121,13 +121,6 @@ font-size: 20px;
 
 /*-- this is th end of the anamation for the moreinfo button  --*/
 
-
-
-
-
-
-
-
 .howtoplay{
   transition: all 0.5s;
   width: 165px;
@@ -203,7 +196,8 @@ font-size: 20px;
      }  
 
 .copyright {
-        bottom: 5px;
+  padding-top: 50px;
+        bottom: 2px;
         font-size: 11px;
         color: rgb(185, 39, 185);
   
