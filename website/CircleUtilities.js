@@ -57,14 +57,14 @@ function generateCircles()
     var circle;
     if(blue === 10)
     {
-        circle = new Circle3d(randomInt(30, x-29), randomInt(30, y-29), randomInt(15, 30), "blue");
+        circle = new Circle(randomInt(30, x-29), randomInt(30, y-29), randomInt(15, 30), "blue");
         circle.xSpeed = randomInt(3, 7);
         circle.ySpeed = randomInt(3, 7);
         circles.push(circle)
     }
     else
     {
-        circle = new Circle3d(randomInt(30, x-29), randomInt(30, y-29), randomInt(15, 30), "red");
+        circle = new Circle(randomInt(30, x-29), randomInt(30, y-29), randomInt(15, 30), "red");
         circle.xSpeed = randomInt(3, 7);
         circle.ySpeed = randomInt(3, 7);
         circles.push(circle);
@@ -83,14 +83,14 @@ function generateRandomCircle()
 
         if(blue === 10)
         {
-            circle = new Circle3d(randomInt(30, x-29), randomInt(30, y-29), randomInt(15, 30), "blue");
+            circle = new Circle(randomInt(30, x-29), randomInt(30, y-29), randomInt(15, 30), "blue");
             circle.xSpeed = randomInt(3, 7);
             circle.ySpeed = randomInt(3, 7);
 
         }
         else
         {
-            circle = new Circle3d(randomInt(30, x-29), randomInt(30, y-29), randomInt(15, 30), "red");
+            circle = new Circle(randomInt(30, x-29), randomInt(30, y-29), randomInt(15, 30), "red");
             circle.xSpeed = randomInt(3, 7);
             circle.ySpeed = randomInt(3, 7);
         }
