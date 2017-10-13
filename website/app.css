@@ -502,12 +502,42 @@ font-size: 20px;
           position: absolute;
         top: 200px;
       }
+      /*---------------- this is the start of the style for add banners -----------------*/
+
+      .insideleftbanner, .insiderightbanner{
+       
+      }
+
+      .rightbanner{
+        padding-top: 40px;
+        /*background: orange;*/
+        width: 20%;
+        height: 700px;
+        float: right;
+      }
+      .insiderightbanner{
+        width: 80%;
+        height: 90%;
+        margin: 0 auto;
+        /*border-style: dotted;
+        background: purple;
+        border-radius: 20px;*/
+      }
+      .leftbanner{
+        padding-top: 40px;
+        /*background: orange;*/
+        width: 20%;
+        height: 700px;
+        float: left;
+      }
+      .insideleftbanner{
+        width: 80%;
+        height: 90%;
+        margin: 0 auto;
+        /*border-style: dotted;
+        background: purple;
+        border-radius: 20px;*/
+      }
 
 
-
-
-
-
-
-      /*---------------------------------ntohign to tseer */
 
