@@ -341,7 +341,7 @@ function registerClickListeners()
 
             for (var i = 0; i < circles.length; i++)
             {
-                 if (checkIntersects(circles[i], x, y + 5))
+                 if (checkIntersects(circles[i], x, y))
                  {
                     circleIndex.push(i);
                     points++;
