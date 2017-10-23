@@ -311,11 +311,6 @@ function gameUpdate()
         //circles[f].draw(ctx);
     }
 
-
     writeToCanvas();
-}
-function setScore(amount)
-{
-    this.score = amount;
 }
 

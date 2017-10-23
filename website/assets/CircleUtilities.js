@@ -24,7 +24,7 @@ function calculateScore()
 function displayFinalResults()
 {
     var s = calculateScore();
-    console.log(s);
+    console.log(points);
     var finalPoints = new DisplayText(points === 0 ? "0" : points, 79,60, "white");
     var finalMisses = new DisplayText(misses === 0 ? "0" : misses, 345,60,"white");
     var finalTime = new DisplayText(totalInterval, 585,60,"white");
@@ -36,24 +36,15 @@ function displayFinalResults()
     finalScore.draw(ctx);
 
     var prevScore = localStorage.getItem("score");
-    console.log(finalScore.name);
-    console.log(prevScore);
-    if(prevScore === "null" || prevScore === null)
+
+    if(prevScore !== null && prevScore !== "null")
     {
-        console.log("testss");
-        prevScore = 0;
-    }
-    if(prevScore !== null || prevScore !== "null")
-    {
-        console.log("more tests");
-        if(prevScore < s)
+        if(prevScore < score)
         {
-            console.log("jfdsklfjsl;");
-            setScore(finalScore.name);
             localStorage.setItem("score", score);
         }
     }
-    console.log(score);
+     score = localStorage.getItem("score");
 
 }
 
@@ -344,8 +335,8 @@ function registerClickListeners()
         if (gameState === 1)
         {
 
-            var x = event.pageX - canvas.offsetLeft;
-            var y = event.pageY - canvas.offsetTop;
+            var x = event.clientX - canvas.offsetLeft;
+            var y = event.clientY - canvas.offsetTop;
             misses++;
 
             for (var i = 0; i < circles.length; i++)
@@ -388,11 +379,9 @@ function registerClickListeners()
 
 function setMenu()
 {
-    console.log(score);
     ctx.drawImage(document.getElementById("Menu"), 1,1,698,698);
     var scoreText = new DisplayText("HighScore", 350,30, "black");
     var s = new DisplayText(score === null || score === "null" ? "0" : score, 350, 60, "black");
-    console.log(s);
     scoreText.draw(ctx);
     s.draw(ctx);
 }

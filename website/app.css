@@ -121,16 +121,9 @@ font-size: 20px;
 
 /*-- this is th end of the anamation for the moreinfo button  --*/
 
-
-
-
-
-
-
-
 .howtoplay{
   transition: all 0.5s;
-  width: 200px;
+  width: 165px;
   font-size: 20px;
   background-color: rgba(255, 255, 255, 0); 
   color: white; 
@@ -141,7 +134,7 @@ font-size: 20px;
 .howtoplay:hover{
   background: #00F7FF;
   color: black;
-  margin: 20px;
+  margin: 30px;
 }
 
 /*  ---- this is the start of the anamation of the text moreinfo ----*/
@@ -174,12 +167,6 @@ font-size: 20px;
 
 /*-- this is th end of the anamation for the moreinfo button  --*/
 
-
-
-
-
-
-
      
 /* this adds the visuals to the info text box */
  .tooltiptext {
@@ -209,7 +196,8 @@ font-size: 20px;
      }  
 
 .copyright {
-        bottom: 5px;
+  padding-top: 50px;
+        bottom: 2px;
         font-size: 11px;
         color: rgb(185, 39, 185);
   
@@ -231,13 +219,14 @@ font-size: 20px;
 
     .fa-angle-double-down:before {content: "\f103";}
     .bounce:hover {
+
         border: 2px solid rgb(185, 39, 185);
        
     }
 
     .bounce {
         position: absolute;
-        top: 120px;
+        top: 250px;
         left: 50% ;
         width: 60px;
         height: 60px ;
@@ -329,7 +318,7 @@ font-size: 20px;
     }
     .home{
         transition: all 0.5s;
-        width: 120px;
+        width: 160px;
         font-size: 20px;
         background-color: rgba(255, 255, 255, 0); 
         color: white; 
@@ -370,7 +359,7 @@ font-size: 20px;
     /*-- this is th end of the anamation for the home button  --*/
 
     .download{
-        width: 150px;
+        width: 165px;
         margin: 10px;
         font-size: 20px;
         background-color: rgba(255, 255, 255, 0); 
@@ -410,7 +399,7 @@ font-size: 20px;
 
     /*-- this is the end of the anamation for the downlaod button  --*/
     .about{
-        width: 150px;
+        width: 165px;
         font-size: 20px;
         background-color: rgba(255, 255, 255, 0); 
         color: white; 
@@ -513,12 +502,42 @@ font-size: 20px;
           position: absolute;
         top: 200px;
       }
+      /*---------------- this is the start of the style for add banners -----------------*/
+
+      .insideleftbanner, .insiderightbanner{
+       
+      }
+
+      .rightbanner{
+        padding-top: 40px;
+        /*background: orange;*/
+        width: 20%;
+        height: 700px;
+        float: right;
+      }
+      .insiderightbanner{
+        width: 80%;
+        height: 90%;
+        margin: 0 auto;
+        /*border-style: dotted;
+        background: purple;
+        border-radius: 20px;*/
+      }
+      .leftbanner{
+        padding-top: 40px;
+        /*background: orange;*/
+        width: 20%;
+        height: 700px;
+        float: left;
+      }
+      .insideleftbanner{
+        width: 80%;
+        height: 90%;
+        margin: 0 auto;
+        /*border-style: dotted;
+        background: purple;
+        border-radius: 20px;*/
+      }
 
 
-
-
-
-
-
-      /*---------------------------------ntohign to tseer */
 

@@ -15,8 +15,13 @@
       <file leaf-file-name="CircleGameDeluxeHTML.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CircleGameDeluxeHTML.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="797">
               <caret line="100" column="38" lean-forward="false" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
+=======
+            <state relative-caret-position="816">
+              <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
+>>>>>>> refs/remotes/origin/seyram
               <folding />
             </state>
           </provider>
@@ -25,8 +30,13 @@
       <file leaf-file-name="CircleGame.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CircleGame.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="136">
               <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+=======
+            <state relative-caret-position="493">
+              <caret line="86" column="17" lean-forward="false" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
+>>>>>>> refs/remotes/origin/seyram
               <folding />
             </state>
           </provider>
@@ -35,8 +45,13 @@
       <file leaf-file-name="CircleUtilities.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CircleUtilities.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="386">
               <caret line="343" column="53" lean-forward="false" selection-start-line="343" selection-start-column="53" selection-end-line="343" selection-end-column="53" />
+=======
+            <state relative-caret-position="-425">
+              <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+>>>>>>> refs/remotes/origin/seyram
               <folding />
             </state>
           </provider>
@@ -94,6 +109,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> refs/remotes/origin/seyram
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -116,10 +135,16 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="Scope" />
+=======
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+>>>>>>> refs/remotes/origin/seyram
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -252,12 +277,19 @@
       <updated>1507016096339</updated>
       <workItem from="1507016102086" duration="1424000" />
       <workItem from="1507261872443" duration="160000" />
+<<<<<<< HEAD
       <workItem from="1508199941871" duration="350000" />
+=======
+>>>>>>> refs/remotes/origin/seyram
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="1934000" />
+=======
+    <option name="totallyTimeSpent" value="1584000" />
+>>>>>>> refs/remotes/origin/seyram
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -277,7 +309,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25642672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25321338" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> refs/remotes/origin/seyram
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -307,6 +343,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CircleGameDeluxeHTML.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -331,6 +368,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CircleGameDeluxeHTML.html">
       <provider selected="true" editor-type-id="text-editor">
+=======
+>>>>>>> refs/remotes/origin/seyram
         <state relative-caret-position="2533">
           <caret line="149" column="78" lean-forward="false" selection-start-line="149" selection-start-column="78" selection-end-line="149" selection-end-column="78" />
           <folding />
@@ -362,24 +401,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CircleGame.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="136">
           <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+=======
+        <state relative-caret-position="493">
+          <caret line="86" column="17" lean-forward="false" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
+>>>>>>> refs/remotes/origin/seyram
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CircleUtilities.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="386">
           <caret line="343" column="53" lean-forward="false" selection-start-line="343" selection-start-column="53" selection-end-line="343" selection-end-column="53" />
+=======
+        <state relative-caret-position="-425">
+          <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+>>>>>>> refs/remotes/origin/seyram
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CircleGameDeluxeHTML.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="797">
           <caret line="100" column="38" lean-forward="false" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
+=======
+        <state relative-caret-position="816">
+          <caret line="94" column="31" lean-forward="false" selection-start-line="94" selection-start-column="31" selection-end-line="94" selection-end-column="31" />
+>>>>>>> refs/remotes/origin/seyram
           <folding />
         </state>
       </provider>
